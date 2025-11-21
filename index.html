@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Gupta - Cybersecurity Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #00ff88;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Base state of the image */
+.hero-image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 3px solid #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    /* ADD THIS LINE below to make the animation smooth */
+    transition: all 0.3s ease;
+    cursor: pointer; /* Shows a hand icon when you hover */
+}
+
+/* NEW CODE: What happens when you hover */
+.hero-image img:hover {
+    transform: scale(1.1); /* This makes the image pop up (10% bigger) */
+    box-shadow: 0 0 50px rgba(0, 212, 255, 0.8); /* This creates the bright glowing background */
+    border-color: #ffffff; /* Optional: Turns the border white for extra brightness */
+}
+        /* Section Headers */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #00d4ff;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Education */
+        .education {
+            text-align: center;
+        }
+
+        .education p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+        }
+
+        /* Skills and Tools */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            background: #222;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #00ff88;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #b0b0b0;
+        }
+
+        /* Domains */
+        .domains {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .domain {
+            background: #1a1a1a;
+            padding: 20px 30px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .domain:hover {
+            background: #222;
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .domain h3 {
+            font-size: 1.1rem;
+            color: #00ff88;
+        }
+
+        /* Portfolio */
+        .portfolio {
+            text-align: center;
+        }
+
+        .portfolio p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+
+        .placeholder {
+            background: #1a1a1a;
+            padding: 50px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .placeholder h3 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+        }
+
+        /* Contact */
+        .contact {
+            background: #111;
+            padding: 80px 0;
+        }
+
+        .contact h2 {
+            color: #00d4ff;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-links a {
+            color: #00ff88;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            color: #00d4ff;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 20px 0;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .hero-image img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .domains {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Abhinav Gupta</h1>
+                <h2>Aspiring Cybersecurity Researcher | Cybersecurity Enthusiast | BCA Student</h2>
+                <p>Passionate about learning ethical hacking, vulnerability analysis, and security fundamentals. Dedicated to advancing knowledge in cybersecurity through research and hands-on practice.</p>
+            </div>
+            <div class="hero-image">
+                <img src="https://drive.google.com/thumbnail?id=1sKb78YgT0KbZBD3DT7AjSbE-MvhDdDo0&sz=w1000" alt="Abhinav Gupta">
+            </div>
+        </div>
+    </section>
+
+    <section class="section education">
+        <div class="container">
+            <h2>Education</h2>
+            <p>Bachelor of Computer Applications (BCA)</p>
+        </div>
+    </section>
+
+    <section class="section skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-code"></i>
+                    <h3>C Programming</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-linux"></i>
+                    <h3>Linux Fundamentals</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Networking Fundamentals</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Web Application Security Basics</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-search"></i>
+                    <h3>OSINT (Open-Source Intelligence)</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Basic Penetration Testing</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Vulnerability Assessment Fundamentals</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-lock"></i>
+                    <h3>Cryptography Basics</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Incident Response Fundamentals</h3>
+                    <p>Basics</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Burp Suite</h3>
+                    <p>Beginner-Level</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section tools">
+        <div class="container">
+            <h2>Tools</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Burp Suite</h3>
+                    <p>Web vulnerability scanner and proxy</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Wireshark</h3>
+                    <p>Network protocol analyzer</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Nmap</h3>
+                    <p>Network discovery and security auditing</p>
+                </div>
+                <div class="card">
+                    <i class="fab fa-linux"></i>
+                    <h3>Linux Command Line</h3>
+                    <p>Command-line interface for Linux systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section domains">
+        <div class="container">
+            <h2>Domains of Interest</h2>
+            <div class="domains">
+                <div class="domain">
+                    <h3>Cybersecurity Research (Aspiring)</h3>
+                </div>
+                <div class="domain">
+                    <h3>Web Security</h3>
+                </div>
+                <div class="domain">
+                    <h3>Network Security</h3>
+                </div>
+                <div class="domain">
+                    <h3>Ethical Hacking</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section portfolio">
+        <div class="container">
+            <h2>Portfolio / Projects</h2>
+            <p>Placeholder for future work in ethical hacking, security research, or web security projects.</p>
+            <div class="placeholder">
+                <h3>Coming Soon</h3>
+                <p>Projects will be showcased here as they are completed.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:abhinav@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/abhinav-gupta-04a4b7307" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/abhinav-gupta" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Abhinav Gupta. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation (if added later)
+        // Add any JS for additional interactivity if needed
+    </script>
+</body>
+</html>
